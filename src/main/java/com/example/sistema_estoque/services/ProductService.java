@@ -2,7 +2,6 @@ package com.example.sistema_estoque.services;
 
 import com.example.sistema_estoque.entities.ProductEntity;
 import com.example.sistema_estoque.repository.ProductRepo;
-import com.example.sistema_estoque.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,8 +33,8 @@ public class ProductService {
     }
 
     //delete product by id
-    public Optional<ProductEntity> deleteById(Long id){
-        return productRepo.findById(id);
+    public void deleteProduct(Long id){
+        productRepo.deleteById(id);
     }
 
     //save product

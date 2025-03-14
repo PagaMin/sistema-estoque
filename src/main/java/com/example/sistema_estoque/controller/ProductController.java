@@ -42,4 +42,10 @@ public class ProductController {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
     }
+
+    //get products with less 5 quantity
+    @GetMapping("/less")
+    public List<ProductEntity> listProductsWithLowStock() {
+        return productService.getProductsWithLowStock();
+    }
 }

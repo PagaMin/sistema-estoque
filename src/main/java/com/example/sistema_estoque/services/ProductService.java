@@ -42,4 +42,7 @@ public class ProductService {
         return productRepo.save(product);
     }
 
+    public List<ProductEntity> getProductsWithLowStock() {
+        return productRepo.findByQuantityLessThan(5);
+    }
 }
